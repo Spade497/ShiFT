@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3493343367",
+    "project_id": "shift-a63f0",
+    "storage_bucket": "shift-a63f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3493343367:android:e5460cfc5abecc2fbc8822",
+        "android_client_info": {
+          "package_name": "mmu.edu.my.shift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3493343367-43ckh27u12k7i2j4nudfvjp1psdm7tr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5P63Kqc2ah0qycTzuePP9OI7Re9WN-y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3493343367-43ckh27u12k7i2j4nudfvjp1psdm7tr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
