@@ -128,5 +128,14 @@
             android:textColor="#69A1AC"/>
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Keep me logged in"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

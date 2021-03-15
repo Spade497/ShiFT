@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShiFT">
-        <activity android:name=".DisplayActivity"></activity>
+        <activity android:name=".DisplayAll"></activity>
+        <activity android:name=".DisplayActivity" />
         <activity android:name=".ui.JobMenu" />
         <activity android:name=".Hire" />
         <activity

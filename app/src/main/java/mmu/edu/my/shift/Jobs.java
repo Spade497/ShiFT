@@ -1,17 +1,26 @@
 package mmu.edu.my.shift;
 
 public class Jobs {
-    String name, state, district, desc, wage, info;
+    String id, name, state, district, desc, wage, info;
 
     public Jobs () {}
 
-    public Jobs(String name, String state, String district, String desc, String wage, String info) {
+    public Jobs(String id, String name, String state, String district, String desc, String wage, String info) {
+        this.id = id;
         this.name = name;
         this.state = state;
         this.district = district;
         this.desc = desc;
         this.wage = wage;
         this.info = info;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

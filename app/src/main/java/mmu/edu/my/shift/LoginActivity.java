@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     Button logBtn;
     FirebaseAuth fAuth;
+    CheckBox remember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,33 @@ public class LoginActivity extends AppCompatActivity {
 
         email=findViewById(R.id.editTextTextEmail);
         password=findViewById(R.id.editTextTextPassword);
+        remember=findViewById(R.id.checkBox);
+
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String checkbox = preferences.getString("remember","");
+        if (checkbox.equals("true")) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+        else {/*nothing*/}
+
+        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (buttonView.isChecked()) {
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+                } else {
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+                }
+            }
+        });
+
 
         TextView reset=findViewById(R.id.textViewForgotPassword);
         reset.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +85,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkUserName();
-                finish();
             }
         });
     }
@@ -79,12 +109,15 @@ public class LoginActivity extends AppCompatActivity {
         if (isValid) {
             String emailValue=email.getText().toString();
             String passwordValue=password.getText().toString();
+
             fAuth.signInWithEmailAndPassword(emailValue,passwordValue).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
+
                         Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
                     } else
                         Toast.makeText(LoginActivity.this, "Error! "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }

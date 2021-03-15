@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Contact Info :"
@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Wage :"
@@ -41,7 +41,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDistrict" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_district" />
 
     <TextView
         android:id="@+id/textView2"
@@ -76,7 +76,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Name :"
+        android:text="Name/Shop/Company:"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +100,18 @@
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="District :"
+        android:text="City :"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="60dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,13 +130,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <EditText
-        android:id="@+id/editTextDistrict"
+    <Spinner
+        android:id="@+id/spinner_district"
         android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:scrollbarSize="4dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
@@ -152,7 +166,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
         android:scrollbarSize="4dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
@@ -169,8 +184,8 @@
         android:maxLines="10"
         android:minLines="1"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDistrict"
-        app:layout_constraintStart_toStartOf="@+id/editTextDistrict"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_district"
+        app:layout_constraintStart_toStartOf="@+id/spinner_district"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
